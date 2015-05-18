@@ -1,6 +1,6 @@
-# debug_unreachable
+# debugln
 
-> unreachable!() in debug, std::intrinsics::unreachable() in release.
+> println!() in debug, noop in release.
 
 ## Usage
 
@@ -9,12 +9,12 @@ with the rest of your dependencies:
 
 ```toml
 [dependencies]
-debug_unreachable = "^0.0.0"
+debugln = "*"
 ```
 
 ## Author
 
-[Jonathan Reem](https://medium.com/@jreem) is the primary author and maintainer of debug-unreachable.
+[Zach Pomerantz](https://github.com/zzmp) is the primary author and maintainer of debug.
 
 ## License
 

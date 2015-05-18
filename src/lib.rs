@@ -1,17 +1,22 @@
 #![deny(missing_docs, warnings)]
 
-//! `panic!()` in debug builds, `intrinsics::unreachable` in release.
+//! `println!()` in debug builds, noop in release.
 
 #[macro_export]
-/// `panic!()` in debug builds, `intrinsics::unreachable` in release.
-macro_rules! debug_unreachable {
-    () => { debug_unreachable!("entered unreachable code") };
-    ($e:expr) => {
+/// `println!()` in debug builds, noop in release.
+macro_rules! debugln {
+    () => { debugln!("(DEBUG)") };
+    ($fmt:expr) => {
         if cfg!(ndebug) {
-            ::std::intrinsics::unreachable();
         } else {
-            panic!($e);
+            println!($fmt);
         }
-    }
+    };
+    ($fmt:expr, $($arg:tt)*) => {
+        if cfg!(ndebug) {
+        } else {
+            println!($fmt, $($arg)*);
+        }
+    };
 }
 
