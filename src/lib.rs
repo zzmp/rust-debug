@@ -7,15 +7,15 @@
 macro_rules! debugln {
     () => { debugln!("(DEBUG)") };
     ($fmt:expr) => {
-        if cfg!(ndebug) {
-        } else {
+        if cfg!(debug_assertions) {
             println!($fmt);
+        } else {
         }
     };
     ($fmt:expr, $($arg:tt)*) => {
-        if cfg!(ndebug) {
-        } else {
+        if cfg!(debug_assertions) {
             println!($fmt, $($arg)*);
+        } else {
         }
     };
 }
