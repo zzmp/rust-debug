@@ -1,7 +1,7 @@
 [package]
 
 name = "debugln"
-version = "0.0.1"
+version = "0.1.0"
 authors = ["Zach Pomerantz <zach@terminal.com>"]
 repository = "https://github.com/zzmp/rust-debug.git"
 description = "println!() in debug, noop in release."
@@ -10,7 +10,5 @@ license = "MIT"
 
 [lib]
 
-name = "debug"
+name = "debugln"
 path = "src/lib.rs"
-plugin = true
-
